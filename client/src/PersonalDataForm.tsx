@@ -1,6 +1,5 @@
 import React from 'react';
-import { FontWeights, TextField, DatePicker, DayOfWeek } from 'office-ui-fabric-react';
-// import { Text } from 'office-ui-fabric-react/lib/Text';
+import { TextField, DatePicker, DayOfWeek } from 'office-ui-fabric-react';
 
 export const PersonalDataForm: React.FunctionComponent = () => {
   return (
