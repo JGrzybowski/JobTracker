@@ -2,8 +2,6 @@ import React from 'react';
 import { FontWeights, TextField, DatePicker, DayOfWeek } from 'office-ui-fabric-react';
 // import { Text } from 'office-ui-fabric-react/lib/Text';
 
-const boldStyle = { root: { fontWeight: FontWeights.semibold } };
-
 export const PersonalDataForm: React.FunctionComponent = () => {
   return (
       <div>      
