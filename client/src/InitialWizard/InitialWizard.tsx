@@ -3,6 +3,7 @@ import { Stack } from 'office-ui-fabric-react';
 import { PersonalDataForm } from './PersonalDataForm';
 import { useHistory, Switch, Route, useRouteMatch, Redirect } from 'react-router';
 import { TemplateChooser } from './TemplateChooser';
+import { EngineeringTemplate } from './EngineeringTemplate';
 
 
 export const InitialWizard: React.FunctionComponent = () => {
@@ -26,11 +27,14 @@ export const InitialWizard: React.FunctionComponent = () => {
         >
             {/* TODO user match.path */}
             <Switch>
-                <Route path={'/initialWizard/personalData'}>
+                <Route path={`${match!.path}/personalData`}>
                     <PersonalDataForm />
                 </Route>
-                <Route path={'/initialWizard/chooseTemplate'}>
+                <Route path={`${match!.path}/chooseTemplate`}>
                     <TemplateChooser />
+                </Route>
+                <Route path={`${match!.path}/engineeringTemplate`}>
+                    <EngineeringTemplate />
                 </Route>
                 <Route path='/initialWizard'>
                     <Redirect to={'/initialWizard/personalData'} />              

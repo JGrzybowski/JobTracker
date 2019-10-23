@@ -7,8 +7,11 @@ const boldStyle = { root: { fontWeight: FontWeights.semibold, width: "60%" } };
 
 export const TemplateChooser: React.FunctionComponent = () => {
     let history = useHistory();
-    function _moveToPersonalData(): void {
+    function _moveToPreviousStep(): void {
         history.push('/initialWizard/personalData')
+    }
+    function _moveToNextStep(): void {
+        history.push('/initialWizard/engineeringTemplate')
     }
 
     return (
@@ -46,8 +49,8 @@ export const TemplateChooser: React.FunctionComponent = () => {
                 ]}
             />
             <Stack horizontal gap={3}>
-                <PrimaryButton text="Back" onClick={_moveToPersonalData} />
-                <PrimaryButton text="Next" />
+                <PrimaryButton text="Back" onClick={_moveToPreviousStep} />
+                <PrimaryButton text="Next" onClick={_moveToNextStep}/>
             </Stack>
         </Stack>
     );

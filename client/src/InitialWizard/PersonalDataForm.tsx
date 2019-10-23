@@ -9,7 +9,7 @@ export const PersonalDataForm: React.FunctionComponent = () => {
   let history = useHistory();
   let match = useRouteMatch();
 
-  function _moveToTemplates(): void {
+  function _moveNextStep(): void {
       history.push('/initialWizard/chooseTemplate')
   }
 
@@ -24,7 +24,7 @@ export const PersonalDataForm: React.FunctionComponent = () => {
                       firstDayOfWeek={DayOfWeek.Monday} />
           <TextField label="Email" />
           <TextField label="Phone" />
-          <PrimaryButton text="Next" onClick={_moveToTemplates} />
+          <PrimaryButton text="Next" onClick={_moveNextStep} />
       </>
   );
 };
