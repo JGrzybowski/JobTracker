@@ -1,13 +1,12 @@
 import React from 'react';
 import { Stack } from 'office-ui-fabric-react';
 import { PersonalDataForm } from './PersonalDataForm';
-import { useHistory, Switch, Route, useRouteMatch, Redirect } from 'react-router';
+import { Switch, Route, useRouteMatch, Redirect } from 'react-router';
 import { TemplateChooser } from './TemplateChooser';
 import { EngineeringTemplate } from './EngineeringTemplate';
 
 
 export const InitialWizard: React.FunctionComponent = () => {
-    let history = useHistory();
     let match = useRouteMatch();
 
     return (

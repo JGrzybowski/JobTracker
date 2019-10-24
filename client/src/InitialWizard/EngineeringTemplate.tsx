@@ -1,13 +1,12 @@
 import React from 'react';
-import { Stack, TextField, DatePicker, IconButton, FontWeights } from 'office-ui-fabric-react';
-import { useHistory, useRouteMatch, Route, Switch, Redirect } from 'react-router';
+import { Stack, FontWeights } from 'office-ui-fabric-react';
+import { useRouteMatch, Route, Switch, Redirect } from 'react-router';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { EducationSection } from './EducationSection';
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold, width: "60%" } };
 
 export const EngineeringTemplate: React.FunctionComponent = () => {
-    let history = useHistory();
     let match = useRouteMatch();
 
     return (

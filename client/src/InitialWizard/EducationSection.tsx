@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack, TextField, DatePicker, IconButton, FontWeights, PrimaryButton } from 'office-ui-fabric-react';
-import { useHistory, useRouteMatch } from 'react-router';
+import { useHistory } from 'react-router';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold, width: "60%" } };
@@ -8,7 +8,6 @@ const maxWidthStyle = { root:{width: '100%'} }
 
 export const EducationSection: React.FunctionComponent = () => {
     let history = useHistory();
-    let match = useRouteMatch();
 
     function _moveToPreviousStep(): void {
         history.push('/initialWizard/chooseTemplate')
