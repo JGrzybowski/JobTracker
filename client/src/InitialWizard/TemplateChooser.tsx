@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, FontWeights, PrimaryButton, CompoundButton, ChoiceGroup, IChoiceGroupOption } from 'office-ui-fabric-react';
+import { Stack, FontWeights, PrimaryButton, ChoiceGroup } from 'office-ui-fabric-react';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { useHistory } from 'react-router';
 
