@@ -5,6 +5,7 @@ import { Text } from 'office-ui-fabric-react/lib/Text';
 import { EducationSection } from './EducationSection';
 import { WorkSection } from './WorkSection';
 import { ProjectsSection } from './ProjectsSection';
+import { SkillsSection } from './SkillsSection';
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold, width: "60%" } };
 
@@ -38,6 +39,9 @@ export const EngineeringTemplate: React.FunctionComponent = () => {
                 </Route>
                 <Route path={`${match!.path}/Projects`}>
                     <ProjectsSection />
+                </Route>
+                <Route path={`${match!.path}/Skills`}>
+                    <SkillsSection />
                 </Route>
                 <Route path={`/InitialWizard/EngineeringTemplate`}>
                     <Redirect to={`${match!.path}/Education`} />              
