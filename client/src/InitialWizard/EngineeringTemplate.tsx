@@ -9,6 +9,7 @@ import { SkillsSection } from './SkillsSection';
 import { LanguagesSection } from './LanguagesSection';
 import { HobbiesSection } from './HobbiesSection';
 import { LinksSection } from './LinksSection';
+import { EngineeringTemplateSummary } from './EngineeringTemplateSummary';
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold, width: "60%" } };
 
