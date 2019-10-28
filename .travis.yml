@@ -11,11 +11,12 @@ install:
 
 script:
     - yarn build
-    #- yarn test
+    - yarn test
 
 deploy:
   provider: azure_web_apps
   site: jobapplicationtracker
+  verbose: true
   on:
     branch: master
   edge: true # opt in to dpl v2
