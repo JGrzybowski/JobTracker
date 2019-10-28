@@ -3,6 +3,7 @@ import { Stack, FontWeights } from 'office-ui-fabric-react';
 import { useRouteMatch, Route, Switch, Redirect } from 'react-router';
 import { Text } from 'office-ui-fabric-react/lib/Text';
 import { EducationSection } from './EducationSection';
+import { WorkSection } from './WorkSection';
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold, width: "60%" } };
 
@@ -30,6 +31,9 @@ export const EngineeringTemplate: React.FunctionComponent = () => {
             <Switch>
                 <Route path={`${match!.path}/Education`}>
                     <EducationSection />
+                </Route>
+                <Route path={`${match!.path}/Work`}>
+                    <WorkSection />
                 </Route>
                 <Route path={`/InitialWizard/EngineeringTemplate`}>
                     <Redirect to={`${match!.path}/Education`} />              
