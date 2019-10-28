@@ -8,6 +8,7 @@ import { ProjectsSection } from './ProjectsSection';
 import { SkillsSection } from './SkillsSection';
 import { LanguagesSection } from './LanguagesSection';
 import { HobbiesSection } from './HobbiesSection';
+import { LinksSection } from './LinksSection';
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold, width: "60%" } };
 
@@ -50,6 +51,12 @@ export const EngineeringTemplate: React.FunctionComponent = () => {
                 </Route>
                 <Route path={`${match!.path}/Hobbies`}>
                     <HobbiesSection />
+                </Route>
+                <Route path={`${match!.path}/Links`}>
+                    <LinksSection />
+                </Route>
+                <Route path={`${match!.path}/Summary`}>
+                    <EngineeringTemplateSummary />
                 </Route>
                 <Route path={`/InitialWizard/EngineeringTemplate`}>
                     <Redirect to={`${match!.path}/Education`} />              
