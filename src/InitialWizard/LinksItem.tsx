@@ -7,7 +7,7 @@ export const LinksItem: React.FunctionComponent = () => {
     return (
         <Stack >
             <TextField label="Name" underlined styles={maxWidthStyle}/>
-            <TextField label="Lnik" underlined styles={maxWidthStyle}/>
+            <TextField label="Link" underlined styles={maxWidthStyle}/>
         </Stack>
     );
 }
