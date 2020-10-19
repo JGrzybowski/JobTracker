@@ -6,9 +6,14 @@ import { initializeIcons } from "office-ui-fabric-react/lib/Icons";
 import "office-ui-fabric-react/dist/css/fabric.css";
 import { Navigation } from "./navigation/Navigation";
 import { Stack } from "office-ui-fabric-react";
+import { ResumeSchema } from "./models/ResumeSchema";
+import { SampleResume } from "./models/SampleResume";
 
 initializeIcons(/* optional base url */);
+
 export const App: React.FunctionComponent = () => {
+  let profile: ResumeSchema = SampleResume();
+
   return (
     <Stack horizontal gap={150}>
       <Stack.Item align="stretch">
@@ -21,7 +26,7 @@ export const App: React.FunctionComponent = () => {
               <Welcome />
             </Route>
             <Route path="/initialWizard">
-              <InitialWizard />
+              <InitialWizard profile={profile} />
             </Route>
             <Route exact path="/">
               <Redirect to="/welcome" />
