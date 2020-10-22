@@ -33,7 +33,7 @@ export const InitialWizard: React.FunctionComponent<{ profile: ResumeSchema }> =
           <TemplateChooser />
         </Route>
         <Route path={`${match!.path}/engineeringTemplate`}>
-          <EngineeringTemplate />
+          <EngineeringTemplate profile={profile} />
         </Route>
         <Route path="/initialWizard">
           <Redirect to={"/initialWizard/personalData"} />

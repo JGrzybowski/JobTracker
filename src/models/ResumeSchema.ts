@@ -12,7 +12,7 @@ import { type } from "os";
  */
 export type Iso8601 = string;
 
-export type BasicsSection = {
+export type BasicsSectionSchema = {
   name?: string;
   /**
    * e.g. Web Developer
@@ -78,45 +78,77 @@ export type BasicsSection = {
   [k: string]: unknown;
 };
 
+export type WorkSectionSchema = {
+  /**
+   * e.g. Facebook
+   */
+  name?: string;
+  /**
+   * e.g. Menlo Park, CA
+   */
+  location?: string;
+  /**
+   * e.g. Social Media Company
+   */
+  description?: string;
+  /**
+   * e.g. Software Engineer
+   */
+  position?: string;
+  /**
+   * e.g. http://facebook.example.com
+   */
+  url?: string;
+  startDate?: Iso8601;
+  endDate?: Iso8601;
+  /**
+   * Give an overview of your responsibilities at the company
+   */
+  summary?: string;
+  /**
+   * Specify multiple accomplishments
+   */
+  highlights?: string[];
+  [k: string]: unknown;
+};
+
+export type EducationSectionSchema = {
+  /**
+   * e.g. Massachusetts Institute of Technology
+   */
+  institution?: string;
+  /**
+   * e.g. http://facebook.example.com
+   */
+  url?: string;
+  /**
+   * e.g. Arts
+   */
+  area?: string;
+  /**
+   * e.g. Bachelor
+   */
+  studyType?: string;
+  startDate?: Iso8601;
+  endDate?: Iso8601;
+  /**
+   * grade point average, e.g. 3.67/4.0
+   */
+  gpa?: string;
+  /**
+   * List notable courses/subjects
+   */
+  courses?: string[];
+  [k: string]: unknown;
+};
+
 export interface ResumeSchema {
   /**
    * link to the version of the schema that can validate the resume
    */
   $schema?: string;
-  basics?: BasicsSection;
-  work?: {
-    /**
-     * e.g. Facebook
-     */
-    name?: string;
-    /**
-     * e.g. Menlo Park, CA
-     */
-    location?: string;
-    /**
-     * e.g. Social Media Company
-     */
-    description?: string;
-    /**
-     * e.g. Software Engineer
-     */
-    position?: string;
-    /**
-     * e.g. http://facebook.example.com
-     */
-    url?: string;
-    startDate?: Iso8601;
-    endDate?: Iso8601;
-    /**
-     * Give an overview of your responsibilities at the company
-     */
-    summary?: string;
-    /**
-     * Specify multiple accomplishments
-     */
-    highlights?: string[];
-    [k: string]: unknown;
-  }[];
+  basics?: BasicsSectionSchema;
+  work?: WorkSectionSchema[];
   volunteer?: {
     /**
      * e.g. Facebook
@@ -142,35 +174,7 @@ export interface ResumeSchema {
     highlights?: string[];
     [k: string]: unknown;
   }[];
-  education?: {
-    /**
-     * e.g. Massachusetts Institute of Technology
-     */
-    institution?: string;
-    /**
-     * e.g. http://facebook.example.com
-     */
-    url?: string;
-    /**
-     * e.g. Arts
-     */
-    area?: string;
-    /**
-     * e.g. Bachelor
-     */
-    studyType?: string;
-    startDate?: Iso8601;
-    endDate?: Iso8601;
-    /**
-     * grade point average, e.g. 3.67/4.0
-     */
-    gpa?: string;
-    /**
-     * List notable courses/subjects
-     */
-    courses?: string[];
-    [k: string]: unknown;
-  }[];
+  education?: EducationSectionSchema[];
   /**
    * Specify any awards you have received throughout your professional career
    */
