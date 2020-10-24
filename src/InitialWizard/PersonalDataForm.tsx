@@ -1,13 +1,15 @@
 import React from "react";
-import { TextField, DatePicker, DayOfWeek, PrimaryButton, FontWeights } from "office-ui-fabric-react";
+import { TextField, PrimaryButton, FontWeights } from "office-ui-fabric-react";
 import { useHistory } from "react-router";
 import { Text } from "office-ui-fabric-react/lib/Text";
 import { BasicsSectionSchema } from "../models/ResumeSchema";
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold } };
 
-export const PersonalDataForm: React.FunctionComponent<{ data?: BasicsSectionSchema }> = ({ data }) => {
-  let history = useHistory();
+export const PersonalDataForm: React.FunctionComponent<{
+  data?: BasicsSectionSchema;
+}> = ({ data }) => {
+  const history = useHistory();
 
   function _moveNextStep(): void {
     history.push("/initialWizard/chooseTemplate");

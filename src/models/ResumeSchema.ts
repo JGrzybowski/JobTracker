@@ -5,12 +5,26 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-import { type } from "os";
-
 /**
  * e.g. 2014-06-29
  */
 export type Iso8601 = string;
+
+export type ProfilesSectionSchema = {
+  /**
+   * e.g. Facebook or Twitter
+   */
+  network?: string;
+  /**
+   * e.g. neutralthoughts
+   */
+  username?: string;
+  /**
+   * e.g. http://twitter.example.com/neutralthoughts
+   */
+  url?: string;
+  [k: string]: unknown;
+};
 
 export type BasicsSectionSchema = {
   name?: string;
@@ -60,21 +74,7 @@ export type BasicsSectionSchema = {
   /**
    * Specify any number of social networks that you participate in
    */
-  profiles?: {
-    /**
-     * e.g. Facebook or Twitter
-     */
-    network?: string;
-    /**
-     * e.g. neutralthoughts
-     */
-    username?: string;
-    /**
-     * e.g. http://twitter.example.com/neutralthoughts
-     */
-    url?: string;
-    [k: string]: unknown;
-  }[];
+  profiles?: ProfilesSectionSchema[];
   [k: string]: unknown;
 };
 

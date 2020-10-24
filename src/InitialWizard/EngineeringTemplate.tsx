@@ -14,9 +14,11 @@ import { ResumeSchema } from "../models/ResumeSchema";
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold, width: "60%" } };
 
-export const EngineeringTemplate: React.FunctionComponent<{ profile?: ResumeSchema }> = ({ profile }) => {
-  let match = useRouteMatch();
-  let edu = profile?.education;
+export const EngineeringTemplate: React.FunctionComponent<{
+  profile?: ResumeSchema;
+}> = ({ profile }) => {
+  const match = useRouteMatch();
+
   return (
     <Stack
       horizontalAlign="center"
@@ -36,32 +38,32 @@ export const EngineeringTemplate: React.FunctionComponent<{ profile?: ResumeSche
         Engineering CV
       </Text>
       <Switch>
-        <Route path={`${match!.path}/Education`}>
+        <Route path={`${match?.path}/Education`}>
           <EducationSection data={profile?.education} />
         </Route>
-        <Route path={`${match!.path}/Work`}>
-          <WorkSection />
+        <Route path={`${match?.path}/Work`}>
+          <WorkSection data={profile?.work} />
         </Route>
-        <Route path={`${match!.path}/Projects`}>
-          <ProjectsSection />
+        <Route path={`${match?.path}/Projects`}>
+          <ProjectsSection data={profile?.projects} />
         </Route>
-        <Route path={`${match!.path}/Skills`}>
-          <SkillsSection />
+        <Route path={`${match?.path}/Skills`}>
+          <SkillsSection data={profile?.skills} />
         </Route>
-        <Route path={`${match!.path}/Languages`}>
-          <LanguagesSection />
+        <Route path={`${match?.path}/Languages`}>
+          <LanguagesSection data={profile?.languages} />
         </Route>
-        <Route path={`${match!.path}/Hobbies`}>
-          <HobbiesSection />
+        <Route path={`${match?.path}/Hobbies`}>
+          <HobbiesSection data={profile?.interests} />
         </Route>
-        <Route path={`${match!.path}/Links`}>
-          <LinksSection />
+        <Route path={`${match?.path}/Links`}>
+          <LinksSection data={profile?.basics?.profiles} />
         </Route>
-        <Route path={`${match!.path}/Summary`}>
-          <EngineeringTemplateSummary />
+        <Route path={`${match?.path}/Summary`}>
+          <EngineeringTemplateSummary data={profile} />
         </Route>
         <Route path={`/InitialWizard/EngineeringTemplate`}>
-          <Redirect to={`${match!.path}/Education`} />
+          <Redirect to={`${match?.path}/Education`} />
         </Route>
       </Switch>
     </Stack>

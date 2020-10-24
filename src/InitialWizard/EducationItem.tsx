@@ -4,20 +4,35 @@ import { EducationSectionSchema } from "../models/ResumeSchema";
 
 const maxWidthStyle = { root: { width: "100%" } };
 
-export const EducationItem: React.FunctionComponent<{ data: EducationSectionSchema }> = ({ data }) => {
+export const EducationItem: React.FunctionComponent<{
+  data: EducationSectionSchema;
+}> = ({ data }) => {
   return (
     <Stack horizontalAlign="center">
-      <TextField label="University" underlined styles={maxWidthStyle} value={data.institution} />
+      <TextField
+        label="University"
+        value={data.institution}
+        underlined
+        styles={maxWidthStyle}
+      />
       <TextField
         label="Description"
+        value={`${data.studyType} ${data.area}`}
         underlined
         multiline
         styles={maxWidthStyle}
-        value={`${data.studyType} ${data.area}`}
       />
       <Stack horizontal>
-        <DatePicker label="From" underlined value={data.startDate ? new Date(data.startDate) : new Date("")} />
-        <DatePicker label="To" underlined value={data.endDate ? new Date(data.endDate) : new Date("")} />
+        <DatePicker
+          label="From"
+          underlined
+          value={new Date(data.startDate ?? "")}
+        />
+        <DatePicker
+          label="To"
+          underlined
+          value={new Date(data.endDate ?? "")}
+        />
       </Stack>
     </Stack>
   );

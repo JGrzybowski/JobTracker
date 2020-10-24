@@ -5,7 +5,7 @@ import { WizardSection } from "./WizardSection";
 
 export const EducationSection: React.FunctionComponent<{ data?: EducationSectionSchema[] }> = ({ data }) => {
   let items = data
-    ? data.map((element) => {
+    ? data.map((element: EducationSectionSchema) => {
         return <EducationItem data={element} />;
       })
     : null;

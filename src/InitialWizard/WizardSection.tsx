@@ -14,8 +14,8 @@ interface WizardSectionProps{
     onAddClick?: ((event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement | HTMLDivElement | BaseButton | Button | HTMLSpanElement, MouseEvent>) => void);
 }
 
-export const WizardSection: React.FunctionComponent<WizardSectionProps> = (props) => {
-    let history = useHistory();
+export const WizardSection: React.FunctionComponent<WizardSectionProps> = (props: WizardSectionProps) => {
+    const history = useHistory();
     
     function _moveToPreviousStep(): void {
         if (props.previousStepUri) 

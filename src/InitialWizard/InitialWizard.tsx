@@ -6,8 +6,10 @@ import { TemplateChooser } from "./TemplateChooser";
 import { EngineeringTemplate } from "./EngineeringTemplate";
 import { ResumeSchema } from "../models/ResumeSchema";
 
-export const InitialWizard: React.FunctionComponent<{ profile: ResumeSchema }> = ({ profile }) => {
-  let match = useRouteMatch();
+export const InitialWizard: React.FunctionComponent<{
+  profile: ResumeSchema;
+}> = ({ profile }) => {
+  const match = useRouteMatch();
 
   return (
     <Stack
@@ -26,13 +28,13 @@ export const InitialWizard: React.FunctionComponent<{ profile: ResumeSchema }> =
     >
       {/* TODO user match.path */}
       <Switch>
-        <Route path={`${match!.path}/personalData`}>
+        <Route path={`${match?.path}/personalData`}>
           <PersonalDataForm data={profile.basics} />
         </Route>
-        <Route path={`${match!.path}/chooseTemplate`}>
+        <Route path={`${match?.path}/chooseTemplate`}>
           <TemplateChooser />
         </Route>
-        <Route path={`${match!.path}/engineeringTemplate`}>
+        <Route path={`${match?.path}/engineeringTemplate`}>
           <EngineeringTemplate profile={profile} />
         </Route>
         <Route path="/initialWizard">
