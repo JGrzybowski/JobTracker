@@ -8,7 +8,7 @@ export class ProfilesSectionItem {
   /**
    * e.g. Facebook or Twitter
    */
-  network?: string;
+  network: string;
   /**
    * e.g. neutralthoughts
    */
@@ -18,6 +18,9 @@ export class ProfilesSectionItem {
    */
   url?: string;
   [k: string]: unknown;
+  constructor() {
+    this.network = uuid();
+  }
 }
 
 export class BasicsSection {
@@ -73,6 +76,7 @@ export class BasicsSection {
 }
 
 export class WorkSectionItem {
+  id: string;
   /**
    * e.g. Facebook
    */
@@ -104,9 +108,13 @@ export class WorkSectionItem {
    */
   highlights?: string[];
   [k: string]: unknown;
+  constructor() {
+    this.id = uuid();
+  }
 }
 
 export class VolunteerSectionItem {
+  id: string;
   /**
    * e.g. Facebook
    */
@@ -130,6 +138,9 @@ export class VolunteerSectionItem {
    */
   highlights?: string[];
   [k: string]: unknown;
+  constructor() {
+    this.id = uuid();
+  }
 }
 
 export class EducationSectionItem {
@@ -167,6 +178,7 @@ export class EducationSectionItem {
 }
 
 export class AwardsSectionItem {
+  id: string;
   /**
    * e.g. One of the 100 greatest minds of the century
    */
@@ -181,9 +193,13 @@ export class AwardsSectionItem {
    */
   summary?: string;
   [k: string]: unknown;
+  constructor() {
+    this.id = uuid();
+  }
 }
 
 export class PublicationsSectionItem {
+  id: string;
   /**
    * e.g. The World Wide Web
    */
@@ -202,9 +218,13 @@ export class PublicationsSectionItem {
    */
   summary?: string;
   [k: string]: unknown;
+  constructor() {
+    this.id = uuid();
+  }
 }
 
 export class SkillsSectionItem {
+  id: string;
   /**
    * e.g. Web Development
    */
@@ -218,9 +238,13 @@ export class SkillsSectionItem {
    */
   keywords?: string[];
   [k: string]: unknown;
+  constructor() {
+    this.id = uuid();
+  }
 }
 
 export class LanguagesSectionItem {
+  id: string;
   /**
    * e.g. English, Spanish
    */
@@ -230,18 +254,26 @@ export class LanguagesSectionItem {
    */
   fluency?: string;
   [k: string]: unknown;
+  constructor() {
+    this.id = uuid();
+  }
 }
 
 export class InterestsSectionItem {
+  id: string;
   /**
    * e.g. Philosophy
    */
   name?: string;
   keywords?: string[];
   [k: string]: unknown;
+  constructor() {
+    this.id = uuid();
+  }
 }
 
 export class ReferencesSectionItem {
+  id: string;
   /**
    * e.g. Timothy Cook
    */
@@ -251,9 +283,13 @@ export class ReferencesSectionItem {
    */
   reference?: string;
   [k: string]: unknown;
+  constructor() {
+    this.id = uuid();
+  }
 }
 
 export class ProjectsSectionItem {
+  id: string;
   /**
    * e.g. The World Wide Web
    */
@@ -289,9 +325,12 @@ export class ProjectsSectionItem {
    */
   class?: string;
   [k: string]: unknown;
+  constructor() {
+    this.id = uuid();
+  }
 }
 
-export class MetaSectionItem {
+export class MetaSection {
   /**
    * URL (as per RFC 3986) to latest version of this document
    */
@@ -344,5 +383,5 @@ export interface Resume {
   /**
    * The schema version and any other tooling configuration lives here
    */
-  meta?: MetaSectionItem;
+  meta?: MetaSection;
 }

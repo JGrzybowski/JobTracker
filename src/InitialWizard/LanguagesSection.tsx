@@ -1,16 +1,14 @@
 import React from "react";
-import { LanguagesSectionSchema } from "../models/ResumeSchema";
+import { LanguagesSectionItem } from "../models/ResumeDataModels";
 import { LanguagesItem } from "./LanguagesItem";
 import { WizardSection } from "./WizardSection";
 
 export const LanguagesSection: React.FunctionComponent<{
-  data?: LanguagesSectionSchema[];
+  data?: LanguagesSectionItem[];
 }> = ({ data }) => {
-  const items = data
-    ? data.map((element: LanguagesSectionSchema) => {
-        return <LanguagesItem data={element} />;
-      })
-    : null;
+  const items = data?.map((element: LanguagesSectionItem) => {
+    return <LanguagesItem data={element} key={element.id} />;
+  });
 
   return (
     <>

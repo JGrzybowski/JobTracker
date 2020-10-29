@@ -1,16 +1,15 @@
 import React from "react";
-import { SkillsSectionSchema } from "../models/ResumeSchema";
+import { SkillsSectionItem } from "../models/ResumeDataModels";
 import { SkillsItem } from "./SkillsItem";
 import { WizardSection } from "./WizardSection";
 
 export const SkillsSection: React.FunctionComponent<{
-  data?: SkillsSectionSchema[];
+  data?: SkillsSectionItem[];
 }> = ({ data }) => {
-  const items = data
-    ? data.map((element: SkillsSectionSchema) => {
-        return <SkillsItem data={element} />;
-      })
-    : null;
+  const items = data?.map((element: SkillsSectionItem) => {
+    return <SkillsItem data={element} />;
+  });
+
   return (
     <>
       <WizardSection

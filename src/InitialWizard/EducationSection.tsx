@@ -1,14 +1,14 @@
 import React from "react";
-import { EducationSectionSchema } from "../models/ResumeSchema";
+import { EducationSectionItem } from "../models/ResumeDataModels";
 import { EducationItem } from "./EducationItem";
 import { WizardSection } from "./WizardSection";
 
-export const EducationSection: React.FunctionComponent<{ data?: EducationSectionSchema[] }> = ({ data }) => {
-  let items = data
-    ? data.map((element: EducationSectionSchema) => {
-        return <EducationItem data={element} />;
-      })
-    : null;
+export const EducationSection: React.FunctionComponent<{
+  data?: EducationSectionItem[];
+}> = ({ data }) => {
+  const items = data?.map((element: EducationSectionItem) => {
+    return <EducationItem data={element} key={element.id} />;
+  });
 
   return (
     <>

@@ -1,16 +1,14 @@
 import React from "react";
 import { WorkItem } from "./WorkItem";
 import { WizardSection } from "./WizardSection";
-import { WorkSectionSchema } from "../models/ResumeSchema";
+import { WorkSectionItem } from "../models/ResumeDataModels";
 
 export const WorkSection: React.FunctionComponent<{
-  data?: WorkSectionSchema[];
+  data?: WorkSectionItem[];
 }> = ({ data }) => {
-  const items = data
-    ? data.map((element: WorkSectionSchema) => {
-        return <WorkItem data={element} />;
-      })
-    : null;
+  const items = data?.map((element: WorkSectionItem) => {
+    return <WorkItem data={element} />;
+  });
 
   return (
     <WizardSection

@@ -1,16 +1,15 @@
 import React from "react";
-import { ProjectsSectionSchema } from "../models/ResumeSchema";
+import { ProjectsSectionItem } from "../models/ResumeDataModels";
 import { ProjectsItem } from "./ProjectsItem";
 import { WizardSection } from "./WizardSection";
 
 export const ProjectsSection: React.FunctionComponent<{
-  data?: ProjectsSectionSchema[];
+  data?: ProjectsSectionItem[];
 }> = ({ data }) => {
-  const items = data
-    ? data.map((element: ProjectsSectionSchema) => {
-        return <ProjectsItem data={element} />;
-      })
-    : null;
+  const items = data?.map((element: ProjectsSectionItem) => {
+    return <ProjectsItem data={element} key={element.id} />;
+  });
+
   return (
     <>
       <WizardSection
