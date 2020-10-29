@@ -1,14 +1,19 @@
 import React from "react";
-import { EducationSectionSchema } from "../models/ResumeSchema";
+import { EducationSectionItem } from "../models/ResumeDataModels";
 import { EducationItem } from "./EducationItem";
 import { WizardSection } from "./WizardSection";
+import { Depths } from "@fluentui/theme";
 
-export const EducationSection: React.FunctionComponent<{ data?: EducationSectionSchema[] }> = ({ data }) => {
-  let items = data
-    ? data.map((element: EducationSectionSchema) => {
-        return <EducationItem data={element} />;
-      })
-    : null;
+export const EducationSection: React.FunctionComponent<{
+  data?: EducationSectionItem[];
+}> = ({ data }) => {
+  const items = data?.map((element: EducationSectionItem) => {
+    return (
+      <div style={{ boxShadow: Depths.depth8 }}>
+        <EducationItem data={element} key={element.id} />
+      </div>
+    );
+  });
 
   return (
     <>

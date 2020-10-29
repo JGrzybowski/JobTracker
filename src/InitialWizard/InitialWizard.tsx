@@ -4,10 +4,10 @@ import { PersonalDataForm } from "./PersonalDataForm";
 import { Switch, Route, useRouteMatch, Redirect } from "react-router";
 import { TemplateChooser } from "./TemplateChooser";
 import { EngineeringTemplate } from "./EngineeringTemplate";
-import { ResumeSchema } from "../models/ResumeSchema";
+import { Resume } from "../models/ResumeDataModels";
 
 export const InitialWizard: React.FunctionComponent<{
-  profile: ResumeSchema;
+  profile: Resume;
 }> = ({ profile }) => {
   const match = useRouteMatch();
 
