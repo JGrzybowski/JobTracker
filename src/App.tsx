@@ -6,13 +6,13 @@ import { initializeIcons } from "office-ui-fabric-react/lib/Icons";
 import "office-ui-fabric-react/dist/css/fabric.css";
 import { Navigation } from "./navigation/Navigation";
 import { Stack } from "office-ui-fabric-react";
-import { ResumeSchema } from "./models/ResumeSchema";
 import { SampleResume } from "./models/SampleResume";
+import { Resume } from "./models/ResumeDataModels";
 
 initializeIcons(/* optional base url */);
 
 export const App: React.FunctionComponent = () => {
-  let profile: ResumeSchema = SampleResume();
+  const profile: Resume = SampleResume();
 
   return (
     <Stack horizontal gap={150}>

@@ -10,12 +10,12 @@ import { LanguagesSection } from "./LanguagesSection";
 import { HobbiesSection } from "./HobbiesSection";
 import { LinksSection } from "./LinksSection";
 import { EngineeringTemplateSummary } from "./EngineeringTemplateSummary";
-import { ResumeSchema } from "../models/ResumeSchema";
+import { Resume } from "../models/ResumeDataModels";
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold, width: "60%" } };
 
 export const EngineeringTemplate: React.FunctionComponent<{
-  profile?: ResumeSchema;
+  profile: Resume;
 }> = ({ profile }) => {
   const match = useRouteMatch();
 

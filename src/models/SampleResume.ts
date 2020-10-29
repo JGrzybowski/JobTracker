@@ -1,8 +1,9 @@
-import { ResumeSchema } from "./ResumeSchema";
+import { Resume } from "./ResumeDataModels";
 
-export function SampleResume(): ResumeSchema {
+export function SampleResume(): Resume {
   return {
-    $schema: "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    $schema:
+      "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
     basics: {
       name: "Richard Hendriks",
       label: "Programmer",
