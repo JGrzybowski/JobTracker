@@ -2,12 +2,17 @@ import React from "react";
 import { InterestsSectionItem } from "../models/ResumeDataModels";
 import { HobbiesItem } from "./HobbiesItem";
 import { WizardSection } from "./WizardSection";
+import { Depths } from "@fluentui/theme";
 
 export const HobbiesSection: React.FunctionComponent<{
   data?: InterestsSectionItem[];
 }> = ({ data }) => {
   const items = data?.map((element: InterestsSectionItem) => {
-    return <HobbiesItem data={element} key={element.id} />;
+    return (
+      <div style={{ boxShadow: Depths.depth8 }}>
+        <HobbiesItem data={element} key={element.id} />
+      </div>
+    );
   });
 
   return (

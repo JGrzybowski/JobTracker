@@ -2,12 +2,17 @@ import React from "react";
 import { ProfilesSectionItem } from "../models/ResumeDataModels";
 import { LinksItem } from "./LinksItem";
 import { WizardSection } from "./WizardSection";
+import { Depths } from "@fluentui/theme";
 
 export const LinksSection: React.FunctionComponent<{
   data?: ProfilesSectionItem[];
 }> = ({ data }) => {
   const items = data?.map((element: ProfilesSectionItem) => {
-    return <LinksItem data={element} key={element.network} />;
+    return (
+      <div style={{ boxShadow: Depths.depth8 }}>
+        <LinksItem data={element} key={element.network} />
+      </div>
+    );
   });
 
   return (

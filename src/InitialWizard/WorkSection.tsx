@@ -2,12 +2,17 @@ import React from "react";
 import { WorkItem } from "./WorkItem";
 import { WizardSection } from "./WizardSection";
 import { WorkSectionItem } from "../models/ResumeDataModels";
+import { Depths } from "@fluentui/theme";
 
 export const WorkSection: React.FunctionComponent<{
   data?: WorkSectionItem[];
 }> = ({ data }) => {
   const items = data?.map((element: WorkSectionItem) => {
-    return <WorkItem data={element} />;
+    return (
+      <div style={{ boxShadow: Depths.depth8 }}>
+        <WorkItem data={element} />
+      </div>
+    );
   });
 
   return (
